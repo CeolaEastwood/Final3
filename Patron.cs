@@ -42,20 +42,15 @@ public void AddToRentalCart(Book RentalBook, DateTime DateDue){
     Console.WriteLine("Added to rental cart: "+ RentalBook.Title + " for Patron "+ FirstName + " " + LastName);
   }
 
-public void RemoveFromRentalCart(Book RentalBook){
-  int index = 0;
 
-  while (index < RentalList.Count) {
-
-      if (RentalList[index].RentalBook.ISBN == RentalBook.ISBN) {
-        RentalList.RemoveAt(index);
-
+  public void RemoveFromRentalCart(Book RentalBook){
+   for(int i = 0; i<RentalList.Count; i++)
+    if (RentalList[i].RentalBook.ISBN == RentalBook.ISBN)
+      {
+        RentalList.RemoveAt(i);
       }
-      Console.WriteLine("Removed from rental cart: "+ RentalBook.Title + " for Patron "+ FirstName + " "+ LastName);
+    Console.WriteLine("Removed from rental cart: "+ RentalBook.Title + " for Patron "+ FirstName + " "+ LastName);
     }
-  }
-
-
 }
 
  
